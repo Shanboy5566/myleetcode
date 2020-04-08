@@ -19,14 +19,14 @@ public:
     int kthSmallest(TreeNode* root, int k) {
         return inorder(root, k);
     }
-
-    int inorder (TreeNode* root, int k){
+    int inorder (TreeNode* root, int& k){
         if (root == nullptr) return -1;
-        inorder(root->left, k);
-        if () return ;
-        inorder(root->right, k);
+        int x = inorder(root->left, k);
+        if (k == 0) return x;
+        if (--k == 0) return root->val;
+        return inorder(root->right, k);
     }
-
 };
+
 // @lc code=end
 
