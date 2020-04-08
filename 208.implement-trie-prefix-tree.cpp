@@ -5,7 +5,7 @@
  */
 
 // @lc code=start
-class Trie {
+class Trie { 
 public:
     /** Initialize your data structure here. */
     Trie(): root(make_unique<TrieNode>()) {}
