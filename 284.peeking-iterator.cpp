@@ -23,6 +23,20 @@
  *	};
  */
 
+// class Iterator {
+// 	struct Data;
+// 	Data* data;
+// public:
+// 	Iterator(const vector<int>& nums);
+// 	Iterator(const Iterator& iter);
+
+// 	// Returns the next element in the iteration.
+// 	int next();
+
+// 	// Returns true if the iteration has more elements.
+// 	bool hasNext() const;
+// };
+
 class PeekingIterator : public Iterator {
 public:
 	
@@ -30,13 +44,12 @@ public:
 	    // Initialize any member here.
 	    // **DO NOT** save a copy of nums and manipulate it directly.
 	    // You should only use the Iterator interface methods.
-	    
 	}
 	
     // Returns the next element in the iteration without advancing the iterator.
 	int peek() {
         // return q.front();
-
+		return Iterator(*this).next();
 	}
 	
 	// hasNext() and next() should behave the same as in the Iterator interface.
@@ -45,16 +58,14 @@ public:
 	    // int val = q.front();
 		// q.pop();
 		// return val;
-		
+		return Iterator::next();
 	}
 	
 	bool hasNext() const {
 		// if (q.size() == 0) return false;
 		// else return true;
-		
+		return Iterator::hasNext();
 	}
-// private:
-// 	queue<int> q;
 };
 // @lc code=end
 
