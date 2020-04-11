@@ -61,7 +61,7 @@ public:
     while(c < n){
         int min_ = INT_MAX;
         int min_idx = -1;
-        cout << "c: " << c << endl; // 
+        // cout << "c: " << c << endl;
         for (int i = 0; i < primes.size(); i++){
             int prime = primes[i];
             int cost_ = prime * min_ugly[history[i]];
